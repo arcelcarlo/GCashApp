@@ -5,6 +5,7 @@ import gcash.app.model.Users;
 import gcash.app.repository.CashInDAO;
 import gcash.app.repository.CheckBalanceDAO;
 import gcash.app.repository.SendMoneyDAO;
+import gcash.app.repository.TransactionHistoryDAO;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -27,7 +28,6 @@ public class UserTransactionsView {
     }
 
     public static void userSendMoneyView(Users user) throws InterruptedException, SQLException {
-        Users userRecipient = new Users();
         SendMoneyDAO sendMoneyDAO = new SendMoneyDAO();
         String senderNumber = user.getPhoneNumber();
         String recipientNumber;
@@ -47,10 +47,12 @@ public class UserTransactionsView {
         checkBalanceDAO.checkBalance(user, balance);
     }
 
-    public static void userTransactionHistoryView(Transactions transactions){
+    public static void userTransactionHistoryView(){
         Users user = new Users();
-        user.getUuid();
-        System.out.println("Generating transactions");
+        TransactionHistoryDAO transactionHistoryDAO = new TransactionHistoryDAO();
+        String userId = user.getUuid().toString();
+        System.exit(0);
+
 
     }
 }

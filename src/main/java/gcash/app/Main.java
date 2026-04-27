@@ -11,7 +11,6 @@ public class Main {
         System.out.println("| ========== Mini DigiBank ========== |");
         System.out.println();
         AuthMenuView.mainMenu();
-        System.out.println(ReferenceNumberGenerator.generateReferenceNumber());
 
         //TODO: transaction history
         //TODO: Implement In class/method to read inputs safely. Use Separate scanner class to accept input from all parts of the program

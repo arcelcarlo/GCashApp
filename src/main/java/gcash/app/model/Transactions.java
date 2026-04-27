@@ -20,9 +20,12 @@ public class Transactions {
     private UUID senderUuid = senderUser.getUuid();
     private UUID recipientUuid = recipientUser.getUuid();
     private String updatedAt = nowTime.format(formatter);
-    private String[] types = {"cash-in", "send", "receive"};
+    private TransactionTypes type;
+
+
 
     //SETTERS
+
     public void setSenderUser(Users senderUser) {
         this.senderUser = senderUser;
     }
@@ -50,6 +53,10 @@ public class Transactions {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
+    public void setType(TransactionTypes type) {
+        this.type = type;
+    }
+
 
     //GETTERS
     public Users getSenderUser() {
@@ -79,6 +86,10 @@ public class Transactions {
     public String getUpdatedAt() {
         return updatedAt;
     }
+    public TransactionTypes getType() {
+        return type;
+    }
+
 
     public Transactions() {
     }
