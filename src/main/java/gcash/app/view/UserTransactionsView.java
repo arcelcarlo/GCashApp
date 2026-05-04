@@ -2,13 +2,12 @@ package gcash.app.view;
 import gcash.app.model.Balance;
 import gcash.app.model.Transactions;
 import gcash.app.model.Users;
-import gcash.app.repository.CashInDAO;
-import gcash.app.repository.CheckBalanceDAO;
-import gcash.app.repository.SendMoneyDAO;
-import gcash.app.repository.TransactionHistoryDAO;
+import gcash.app.repository.*;
 
+import javax.swing.text.View;
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.UUID;
 
 import static gcash.app.view.In.scanner;
 
@@ -47,12 +46,8 @@ public class UserTransactionsView {
         checkBalanceDAO.checkBalance(user, balance);
     }
 
-    public static void userTransactionHistoryView(){
-        Users user = new Users();
-        TransactionHistoryDAO transactionHistoryDAO = new TransactionHistoryDAO();
-        String userId = user.getUuid().toString();
-        System.exit(0);
-
-
+    public static void userTransactionHistoryView(Users user) throws SQLException {
+        ViewTransactionsDAO viewTransactionsDAO = new ViewTransactionsDAO();
+        viewTransactionsDAO.viewTransactions(user.getUuid());
     }
 }

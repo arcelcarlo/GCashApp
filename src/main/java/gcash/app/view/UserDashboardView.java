@@ -31,6 +31,7 @@ public class UserDashboardView {
                         break;
                     case 2:
                         System.out.println("Send money");
+                        assert user != null;
                         UserTransactionsView.userSendMoneyView(user);
                         break;
                     case 3:
@@ -39,7 +40,7 @@ public class UserDashboardView {
                         break;
                     case 4:
                         System.out.println("View transaction history");
-//                        UserTransactionsView.userTransactionHistoryView();
+                        UserTransactionsView.userTransactionHistoryView(user);
                         break;
                     case 5:
                         System.out.println("Exiting program...");
